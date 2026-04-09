@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMTyres — Services | Botswana Tyre Specialists</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .services-hero {
+    background: var(--primary); color: var(--on-primary);
+    padding: 100px 0 120px;
+  }
+  .services-hero h1 {
+    font-size: 3.25rem; font-weight: 900;
+    text-transform: uppercase; line-height: 1;
+    letter-spacing: -0.02em; margin-top: 22px; max-width: 760px;
+  }
+  .services-hero p {
+    color: rgba(249, 250, 245, 0.78);
+    max-width: 580px; margin-top: 22px;
+  }
+  .services-hero .accent-rule { margin-top: 28px; }
+
+  .services-list { background: var(--surface-container-low); padding: 0; }
+  .service-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; background: var(--surface-container);
+  }
+  .service-row.reverse .svc-text { order: 2; }
+  .service-row.reverse .svc-img { order: 1; }
+  .svc-text {
+    background: var(--surface-container-low);
+    padding: 72px 64px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .svc-text .label-stamp {
+    color: var(--secondary); margin-bottom: 18px;
+  }
+  .svc-text h2 {
+    font-size: 1.875rem; font-weight: 900;
+    text-transform: uppercase; letter-spacing: -0.01em;
+    line-height: 1.05; margin-bottom: 18px;
+  }
+  .svc-text p {
+    color: var(--on-surface-variant); font-size: var(--body-md);
+    margin-bottom: 24px; max-width: 460px;
+  }
+  .svc-text ul {
+    list-style: none; margin-bottom: 28px;
+  }
+  .svc-text ul li {
+    font-size: var(--body-sm); color: var(--on-surface);
+    padding: 6px 0 6px 20px; position: relative;
+    border-bottom: 1px solid var(--outline-variant);
+  }
+  .svc-text ul li::before {
+    content: "▸"; position: absolute; left: 0;
+    color: var(--tertiary-fixed-dim); font-weight: 900;
+  }
+  .svc-text ul li:last-child { border-bottom: none; }
+
+  .svc-img {
+    position: relative; min-height: 460px; overflow: hidden;
+  }
+  .svc-img img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; filter: grayscale(0.6) contrast(1.1);
+  }
+  .svc-img .corner-tag {
+    position: absolute; bottom: 0; left: 0;
+    background: var(--tertiary-fixed-dim); width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--primary); font-weight: 900;
+  }
+  .svc-img.right-tag .corner-tag { left: auto; right: 0; }
+
+  .services-cta {
+    background: var(--primary); color: var(--on-primary);
+    padding: 96px 0; text-align: center;
+  }
+  .services-cta h2 {
+    font-size: 2.5rem; font-weight: 900;
+    text-transform: uppercase; letter-spacing: -0.02em;
+    margin-bottom: 18px;
+  }
+  .services-cta p {
+    color: rgba(249, 250, 245, 0.7);
+    max-width: 520px; margin: 0 auto 36px;
+  }
+  .services-cta .btn-group { display: inline-flex; gap: 16px; }
+
+  @media (max-width: 900px) {
+    .service-row { grid-template-columns: 1fr; }
+    .service-row.reverse .svc-text { order: 1; }
+    .service-row.reverse .svc-img { order: 2; }
+    .svc-text { padding: 48px 28px; }
+    .services-hero h1 { font-size: 2rem; }
+    .services-cta .btn-group { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">EMTYRES</a>
+  <ul class="nav-links">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+    <li><a href="services.html" class="active">SERVICES</a></li>
+    <li><a href="locations.html">LOCATIONS</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+  </ul>
+  <a href="tel:+26772418841" class="nav-cta outline">CALL NOW</a>
+</nav>
+
+<!-- HERO -->
+<section class="services-hero">
+  <div class="container">
+    <span class="eyebrow">OUR SERVICES</span>
+    <h1>COMPREHENSIVE TYRE SOLUTIONS FOR EVERY VEHICLE.</h1>
+    <p>Professional service and maintenance to keep you moving safely on Botswana's roads — from passenger cars to mining dump trucks.</p>
+    <div class="accent-rule"></div>
+  </div>
+</section>
+
+<!-- SERVICES ROWS -->
+<section class="services-list">
+
+  <div class="service-row">
+    <div class="svc-text">
+      <span class="label-stamp">01 // LIGHT DUTY</span>
+      <h2>LIGHT DUTY VEHICLE TYRES</h2>
+      <p>Premium tyres for cars, SUVs, and light commercial vehicles with professional fitting and balancing services.</p>
+      <ul>
+        <li>Passenger Car Tyres</li>
+        <li>SUV &amp; 4x4 Tyres</li>
+        <li>Light Commercial Tyres</li>
+        <li>Run-Flat Technology</li>
+      </ul>
+      <div><a href="contact.html" class="btn btn-dark">GET A QUOTE</a></div>
+    </div>
+    <div class="svc-img">
+      <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1000&q=80" alt="Car tyres">
+      <div class="corner-tag">◆</div>
+    </div>
+  </div>
+
+  <div class="service-row reverse">
+    <div class="svc-text">
+      <span class="label-stamp">02 // HEAVY DUTY</span>
+      <h2>HEAVY DUTY VEHICLE TYRES</h2>
+      <p>Specialized tyres for trucks, buses, and commercial fleets designed for durability and performance under sustained load.</p>
+      <ul>
+        <li>Truck &amp; Bus Tyres</li>
+        <li>Commercial Fleet Solutions</li>
+        <li>Retreading Services</li>
+        <li>Fleet Management</li>
+      </ul>
+      <div><a href="contact.html" class="btn btn-dark">GET A QUOTE</a></div>
+    </div>
+    <div class="svc-img right-tag">
+      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1000&q=80" alt="Truck tyres">
+      <div class="corner-tag">■</div>
+    </div>
+  </div>
+
+  <div class="service-row">
+    <div class="svc-text">
+      <span class="label-stamp">03 // INDUSTRIAL</span>
+      <h2>MINING &amp; INDUSTRIAL TYRES</h2>
+      <p>Heavy-duty tyres for mining operations and industrial equipment built to withstand extreme conditions and abrasive terrain.</p>
+      <ul>
+        <li>Mining Truck Tyres</li>
+        <li>Heavy Hauling Solutions</li>
+        <li>OTR Off-Road Tyres</li>
+        <li>Industrial Equipment</li>
+      </ul>
+      <div><a href="contact.html" class="btn btn-dark">GET A QUOTE</a></div>
+    </div>
+    <div class="svc-img">
+      <img src="https://images.unsplash.com/photo-1586864387634-2f33030dab41?w=1000&q=80" alt="Mining truck">
+      <div class="corner-tag">▲</div>
+    </div>
+  </div>
+
+  <div class="service-row reverse">
+    <div class="svc-text">
+      <span class="label-stamp">04 // OFF-THE-ROAD</span>
+      <h2>OTR OFF-THE-ROAD TYRES</h2>
+      <p>Specialized OTR tyres for mining operations, earthmoving equipment, and extreme off-road applications across Botswana's harshest environments.</p>
+      <ul>
+        <li>Mining Dump Trucks</li>
+        <li>Earthmoving Equipment</li>
+        <li>Loader &amp; Excavator Tyres</li>
+        <li>Extreme Terrain Solutions</li>
+      </ul>
+      <div><a href="contact.html" class="btn btn-dark">GET A QUOTE</a></div>
+    </div>
+    <div class="svc-img right-tag">
+      <img src="https://images.unsplash.com/photo-1586449480558-33aa8cd1e054?w=1000&q=80" alt="Earthmover">
+      <div class="corner-tag">◉</div>
+    </div>
+  </div>
+
+  <div class="service-row">
+    <div class="svc-text">
+      <span class="label-stamp">05 // PRECISION FITTING</span>
+      <h2>PROFESSIONAL FITTING</h2>
+      <p>Expert tyre fitting and installation services with state-of-the-art equipment and certified technicians at both our branches.</p>
+      <ul>
+        <li>Wheel Balancing</li>
+        <li>Alignment Services</li>
+        <li>Tyre Mounting</li>
+        <li>Pressure Monitoring</li>
+      </ul>
+      <div><a href="contact.html" class="btn btn-dark">BOOK APPOINTMENT</a></div>
+    </div>
+    <div class="svc-img">
+      <img src="https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?w=1000&q=80" alt="Fitting">
+      <div class="corner-tag">✚</div>
+    </div>
+  </div>
+
+  <div class="service-row reverse">
+    <div class="svc-text">
+      <span class="label-stamp">06 // SAFETY</span>
+      <h2>SAFETY &amp; MAINTENANCE</h2>
+      <p>Comprehensive tyre safety inspections and maintenance programs to ensure optimal performance and extend tyre lifecycle.</p>
+      <ul>
+        <li>Safety Inspections</li>
+        <li>Tread Depth Analysis</li>
+        <li>Pressure Checks</li>
+        <li>Maintenance Programs</li>
+      </ul>
+      <div><a href="contact.html" class="btn btn-dark">SCHEDULE INSPECTION</a></div>
+    </div>
+    <div class="svc-img right-tag">
+      <img src="https://images.unsplash.com/photo-1635770311153-2839f94e89e0?w=1000&q=80" alt="Inspection">
+      <div class="corner-tag">✓</div>
+    </div>
+  </div>
+
+  <div class="service-row">
+    <div class="svc-text">
+      <span class="label-stamp">07 // 24/7 RESPONSE</span>
+      <h2>EMERGENCY SERVICE</h2>
+      <p>Round-the-clock emergency tyre services for breakdowns and urgent replacements across Botswana — from Gaborone to the Jwaneng mining corridor.</p>
+      <ul>
+        <li>Emergency Callouts</li>
+        <li>Roadside Assistance</li>
+        <li>Mobile Fitting</li>
+        <li>Fleet Support</li>
+      </ul>
+      <div><a href="tel:+26772418841" class="btn btn-dark">CALL +267 72 418 841</a></div>
+    </div>
+    <div class="svc-img right-tag" style="order: 2;">
+      <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=1000&q=80" alt="Emergency">
+      <div class="corner-tag">!</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="services-cta">
+  <div class="container">
+    <h2>NEED EXPERT ADVICE?</h2>
+    <p>Our certified technicians are ready to help you choose the right tyres for your vehicle and needs.</p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn btn-amber">SPEAK TO AN EXPERT</a>
+      <a href="#" class="btn btn-outline-light">DOWNLOAD CATALOG</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h4>EMTYRES</h4>
+      <p>Botswana's premier tyre specialists serving the automotive and mining industries with quality products and professional services for over 15 years.</p>
+    </div>
+    <div class="footer-col">
+      <h5>SERVICES</h5>
+      <ul>
+        <li><a href="services.html">LDV Tyres</a></li>
+        <li><a href="services.html">HDV Tyres</a></li>
+        <li><a href="services.html">Mining &amp; OTR</a></li>
+        <li><a href="services.html">Professional Fitting</a></li>
+        <li><a href="services.html">24/7 Emergency</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>LOCATIONS</h5>
+      <ul>
+        <li><a href="locations.html">Gaborone Branch</a></li>
+        <li><a href="locations.html">Jwaneng Branch</a></li>
+        <li><a href="tel:+26772418841">+267 72 418 841</a></li>
+        <li><a href="mailto:info@emtyres.co.bw">info@emtyres.co.bw</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>STAY UPDATED</h5>
+      <div class="newsletter-input">
+        <input type="email" placeholder="Enter your email">
+        <button>›</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2024 EMTYRES. SERVING BOTSWANA'S AUTOMOTIVE AND MINING INDUSTRIES SINCE 2009</div>
+</footer>
+
+</body>
+</html>

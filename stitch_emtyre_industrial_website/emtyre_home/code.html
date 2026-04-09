@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#c57e00",
+                        "on-primary-fixed-variant": "#3c475d",
+                        "inverse-on-surface": "#f0f1ed",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#828da7",
+                        "surface-variant": "#e2e3df",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d7e2ff",
+                        "inverse-primary": "#bbc6e2",
+                        "on-secondary-fixed-variant": "#2f4865",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#45474d",
+                        "on-secondary-fixed": "#001d36",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-container-highest": "#e2e3df",
+                        "surface-container-high": "#e8e8e4",
+                        "secondary-container": "#c2dcff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface": "#f9faf5",
+                        "surface-container-low": "#f3f4f0",
+                        "on-primary-fixed": "#101b30",
+                        "secondary-fixed-dim": "#afc9ea",
+                        "surface-tint": "#545e76",
+                        "on-background": "#1a1c1a",
+                        "primary": "#051125",
+                        "outline-variant": "#c5c6cd",
+                        "secondary-fixed": "#d1e4ff",
+                        "primary-container": "#1b263b",
+                        "outline": "#75777d",
+                        "background": "#f9faf5",
+                        "on-surface": "#1a1c1a",
+                        "tertiary-fixed": "#ffddb8",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#392100",
+                        "primary-fixed-dim": "#bbc6e2",
+                        "tertiary": "#1d0e00",
+                        "surface-dim": "#d9dad6",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f9faf5",
+                        "surface-container": "#edeeea",
+                        "inverse-surface": "#2f312e",
+                        "secondary": "#47607e",
+                        "on-secondary-container": "#48617e",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tectonic-gradient {
+            background: linear-gradient(45deg, #051125 0%, #1B263B 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-[#051125] dark:bg-[#051125] fixed top-0 w-full z-50 border-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<a href="../../index.html" class="text-2xl font-black tracking-tighter text-[#f9faf5] no-underline">EMTyre</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Inter'] font-bold tracking-tight uppercase text-[#ffb95f] border-b-2 border-[#ffb95f] pb-1 hover:bg-[#1B263B] transition-colors duration-200" href="../../index.html">Home</a>
+<a class="font-['Inter'] font-bold tracking-tight uppercase text-[#f9faf5] opacity-80 hover:bg-[#1B263B] hover:text-[#f9faf5] transition-colors duration-200" href="../../services.html">Services</a>
+<a class="font-['Inter'] font-bold tracking-tight uppercase text-[#f9faf5] opacity-80 hover:bg-[#1B263B] hover:text-[#f9faf5] transition-colors duration-200" href="../emtyre_training/code.html">Training</a>
+<a class="font-['Inter'] font-bold tracking-tight uppercase text-[#f9faf5] opacity-80 hover:bg-[#1B263B] hover:text-[#f9faf5] transition-colors duration-200" href="../../about.html">About</a>
+<a class="font-['Inter'] font-bold tracking-tight uppercase text-[#f9faf5] opacity-80 hover:bg-[#1B263B] hover:text-[#f9faf5] transition-colors duration-200" href="../../contact.html">Contact</a>
+</div>
+<a href="../../contact.html" class="bg-[#ffb95f] text-[#051125] font-bold py-2 px-6 hover:bg-[#1B263B] hover:text-[#f9faf5] transition-all duration-200 active:scale-95 no-underline inline-block">
+                Request a Quote
+            </a>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center pt-16">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[0.5] contrast-125" data-alt="Massive yellow earthmoving machinery in an open-pit mine environment at sunset with dramatic industrial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeohOdXgVGKhTgs9PDOxFWOv_zCg3VSzPgamVBdUg-I-iKyK1Olu9WhXEjAy-DmKV9CTBClPqiFcOdE2DXrjo2UZ3sQWlzD7q5pQ37MVVBWjfD_FiwaKXrR-GcL6xy_qpByQckegaoQH_cnAvHxzwZcHMnw-cHKdj3mdRpGTkHx6fBTGFnmYh54B39A1gQtL3hCZPPJgqMKrQ5VL0_Tietfod2TEAKUCRKiWtGMLiMBQ8X9IYen5aBXFXSmrd3FogtC_c9BtTsb_w"/>
+<div class="absolute inset-0 bg-primary/60 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 px-12 max-w-5xl">
+<div class="bg-primary-container p-12 inline-block shadow-2xl">
+<h1 class="text-6xl md:text-7xl font-black tracking-tighter text-surface leading-none mb-6">
+                    HEAVY-DUTY <br/>
+<span class="text-tertiary-fixed-dim">TYRE SOLUTIONS.</span>
+</h1>
+<p class="text-xl text-surface-variant max-w-2xl mb-10 font-medium border-l-4 border-tertiary-fixed-dim pl-6">
+                    Specialist tyre management, maintenance, and safety training for mining, transport, and heavy industry. Engineered for safety and performance.
+                </p>
+<div class="flex gap-4">
+<a href="../../contact.html" class="bg-tertiary-fixed-dim text-primary font-black px-10 py-4 uppercase tracking-widest hover:bg-surface transition-colors no-underline inline-block">
+                        Request a Quote
+                    </a>
+<a href="../emtyre_training/code.html" class="border-2 border-surface text-surface font-black px-10 py-4 uppercase tracking-widest hover:bg-surface hover:text-primary transition-colors no-underline inline-block">
+                        Explore Training
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Services Overview -->
+<section class="py-24 px-12 bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-0 border-t border-outline/20">
+<div class="md:col-span-4 p-12 bg-surface-container-low border-r border-outline/10">
+<span class="label-sm font-black text-secondary tracking-[0.2em] mb-8 block uppercase">01 / Services</span>
+<h2 class="text-4xl font-black tracking-tighter mb-6 text-primary">TYRE <br/>MANAGEMENT</h2>
+<p class="text-on-surface-variant mb-12">Comprehensive lifecycle analysis, pressure monitoring, and inventory tracking to maximize uptime and reduce operational costs.</p>
+<img class="w-full h-48 object-cover" data-alt="Close up of large industrial tyre tread with a technician measuring depth using a professional gauge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA2bx0qYIkK3jd8emWlsKqJ44ujnhT_7NxETXiB4ZMusVXKhmDe2f2y_ov9f7sf5tybKUwR0nMSKIR0E7uDsmgg2NBeRYS-uO0S213hBMD8Rdl2rM5nedboWmH5AcLMGskJpoqSZk1aMx7FRArxEmfPPek1jhU3Tr4EQS-r_fXB5JNJ9TXo_Y-6ghk9O1P7SCfePYk56kd-4U7LfuPoTm04O7e2b1s8rQ2RrlsnZbC3hw1BZYtqzl4AdQbMpaud339yLxERKqNyUg"/>
+</div>
+<div class="md:col-span-4 p-12 bg-surface-container border-r border-outline/10">
+<span class="label-sm font-black text-secondary tracking-[0.2em] mb-8 block uppercase">02 / Maintenance</span>
+<h2 class="text-4xl font-black tracking-tighter mb-6 text-primary">FIELD <br/>SUPPORT</h2>
+<p class="text-on-surface-variant mb-12">Expert on-site technicians equipped with specialized tooling to handle tyre fitting, rotations, and inspections in remote environments.</p>
+<img class="w-full h-48 object-cover" data-alt="Industrial service truck parked on a red dirt mining site under bright daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXhCXxuqQduQs7cldud_lsGcISRbferUevr2DgOrTQRox_9JtrOj2R0i_0bErW7YmKCNitTxRUSkTtBxbZlE83SN8ccbcMbNXMaqiaivILb7jLM12xKcpFdqqwcRS3q3ljOILgWn2W8pcs9q1EjNf6cptOW7q3DSWMomZoxb_lGeEeMn__pTMElsf3xq_KTSRsMok8KmL2bJ46OViLbArUoAdkvSUConFQuP9oTfVs0OcELmBXXL46kPFCLkh82xgmtxjgRxMqMos"/>
+</div>
+<div class="md:col-span-4 p-12 bg-surface-container-high">
+<span class="label-sm font-black text-secondary tracking-[0.2em] mb-8 block uppercase">03 / Emergency</span>
+<h2 class="text-4xl font-black tracking-tighter mb-6 text-primary">BREAKDOWN <br/>RESPONSE</h2>
+<p class="text-on-surface-variant mb-12">Rapid response unit dedicated to minimizing fleet downtime. 24/7 technical support for critical tyre failures in the field.</p>
+<img class="w-full h-48 object-cover" data-alt="Safety lights of a heavy equipment vehicle at night on a dark highway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqhoL057TC-dHh7-4uczbAzmYsZgiSTTWq2r5su9xg048YgzMRN-S9BXdiXJ6gySK5MdyalGG2JXJJ2Gl9BAiONuZMad6uMbaHEgoiAvmr5ixGDF6Jcnb85ZzEiqhmQkK2xLAVwVw5ojaKBuRO3vjTk17bMlmU5daXNYuBFV1CzusV4nZLqrFHgSHC_XbcncSN7DuZlSH6NYJJBiCqgW0NffAzaP9eBgY9RBHHZdBj5e8jSsxCQnqKUFQGyEmc1BCXd_OuiPJzLbU"/>
+</div>
+</div>
+</section>
+<!-- Safety-First Training (Tectonic Section) -->
+<section class="tectonic-gradient py-32 px-12 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<div class="absolute -top-12 -left-12 w-64 h-64 border-l-8 border-t-8 border-tertiary-fixed-dim/20"></div>
+<img class="relative z-10 w-full h-[600px] object-cover grayscale" data-alt="Group of workers in high-visibility vests attending a safety workshop around a large machinery wheel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5hjbQ-Tym_DwD1lfqq5nvMkHQws6WWe7ezB4zzVhWnr1l6BhDHdGckcXit1r6Dq389fG6VSIvxLEJKxqz-9DZtdg4BbrjoRf36c_OLobGpXJW6iH9NvGSq8JHVd7Zuq_UOddGJrozQ2xPxDHXIkhQhjkYoQFslS1aDTJV9z7PUFuZDi7GtlJ02GlgYOMpYzD8aVnb_mCcHFcS27UC1YpJ7rVtjljbua3jLPmOn149RkwlIwXr22QWQ_BG1UNEeTnz7s-CQ4V9ILA"/>
+<div class="absolute bottom-8 right-8 bg-tertiary-fixed-dim px-8 py-4 z-20">
+<p class="text-primary font-black tracking-tight">INDUSTRY CERTIFIED</p>
+</div>
+</div>
+<div class="text-surface">
+<span class="label-sm font-black text-tertiary-fixed-dim tracking-[0.3em] uppercase block mb-6">Business Differentiator</span>
+<h2 class="text-5xl md:text-6xl font-black tracking-tighter leading-none mb-8">SAFETY-FIRST <br/>TRAINING PROGRAM</h2>
+<div class="space-y-6 text-xl text-surface-variant mb-12">
+<p>We don't just supply tyres; we engineer the knowledge to handle them safely. Our comprehensive training modules are designed specifically for heavy industry environments.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span>High-Pressure Handling Protocols</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span>On-Site Emergency Mitigation</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span>Risk Assessment for Heavy Machinery</span>
+</li>
+</ul>
+</div>
+<a href="../emtyre_training/code.html" class="bg-surface text-primary font-black px-12 py-5 uppercase tracking-widest hover:bg-tertiary-fixed-dim transition-colors no-underline inline-block">
+                    Enroll Your Team
+                </a>
+</div>
+</div>
+</section>
+<!-- Industries Served -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="px-12 mb-16">
+<h3 class="text-3xl font-black tracking-tighter text-primary border-b-4 border-primary inline-block pb-2">INDUSTRIES SERVED</h3>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-0">
+<div class="border-r border-b border-outline/10 p-16 flex flex-col items-center justify-center hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-5xl text-secondary mb-4 group-hover:scale-110 transition-transform">precision_manufacturing</span>
+<p class="font-black tracking-widest uppercase text-sm">Mining</p>
+</div>
+<div class="border-r border-b border-outline/10 p-16 flex flex-col items-center justify-center hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-5xl text-secondary mb-4 group-hover:scale-110 transition-transform">local_shipping</span>
+<p class="font-black tracking-widest uppercase text-sm">Logistics</p>
+</div>
+<div class="border-r border-b border-outline/10 p-16 flex flex-col items-center justify-center hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-5xl text-secondary mb-4 group-hover:scale-110 transition-transform">garage</span>
+<p class="font-black tracking-widest uppercase text-sm">Fleet Management</p>
+</div>
+<div class="border-b border-outline/10 p-16 flex flex-col items-center justify-center hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-5xl text-secondary mb-4 group-hover:scale-110 transition-transform">construction</span>
+<p class="font-black tracking-widest uppercase text-sm">Earthmoving</p>
+</div>
+</div>
+</section>
+<!-- Why EMTyre -->
+<section class="py-24 px-12 grid grid-cols-1 md:grid-cols-3 gap-16 bg-surface">
+<div>
+<h4 class="text-4xl font-black tracking-tighter mb-4 text-primary">TECHNICAL COMPETENCE</h4>
+<div class="w-16 h-2 bg-tertiary-fixed-dim mb-6"></div>
+<p class="text-on-surface-variant leading-relaxed">Our engineers hold multi-disciplinary certifications in heavy tyre management and pressure vessel safety, ensuring technical precision in every fitment.</p>
+</div>
+<div>
+<h4 class="text-4xl font-black tracking-tighter mb-4 text-primary">RAPID RESPONSE</h4>
+<div class="w-16 h-2 bg-tertiary-fixed-dim mb-6"></div>
+<p class="text-on-surface-variant leading-relaxed">Downtime is cost. Our logistics network ensures that critical response units are deployed within 4 hours of a critical failure report.</p>
+</div>
+<div>
+<h4 class="text-4xl font-black tracking-tighter mb-4 text-primary">INDUSTRY LEGACY</h4>
+<div class="w-16 h-2 bg-tertiary-fixed-dim mb-6"></div>
+<p class="text-on-surface-variant leading-relaxed">Over 25 years of anchoring heavy industry through precision and reliability. We understand the specific terrain and load demands of the Australian mining sector.</p>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-primary text-surface py-20 px-12 text-center border-y-8 border-tertiary-fixed-dim">
+<h2 class="text-5xl font-black tracking-tighter mb-6">READY TO OPTIMIZE YOUR FLEET?</h2>
+<p class="text-xl text-surface-variant mb-12 max-w-2xl mx-auto">Discuss your site-specific requirements with a senior technical consultant today.</p>
+<a href="../../contact.html" class="bg-tertiary-fixed-dim text-primary font-black px-16 py-6 uppercase tracking-[0.2em] hover:bg-surface transition-all active:scale-95 no-underline inline-block">
+            Speak to an Expert Today
+        </a>
+</section>
+<!-- Footer -->
+<footer class="bg-[#1B263B] dark:bg-[#051125] text-[#f9faf5] font-['Inter'] text-sm tracking-wide">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full">
+<div>
+<div class="text-xl font-black text-[#f9faf5] uppercase mb-6">EMTyre</div>
+<p class="opacity-60 leading-relaxed">
+                    © 2024 EMTyre. Safety First: Anchoring heavy industry through precision and reliability.
+                </p>
+</div>
+<div>
+<h5 class="font-bold text-[#ffb95f] mb-6 uppercase tracking-widest">Solutions</h5>
+<ul class="space-y-4">
+<li><a class="text-[#47607e] hover:text-[#ffb95f] transition-colors" href="../../services.html">Mining</a></li>
+<li><a class="text-[#47607e] hover:text-[#ffb95f] transition-colors" href="../../services.html">Transport</a></li>
+<li><a class="text-[#47607e] hover:text-[#ffb95f] transition-colors" href="../../services.html">Logistics</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-[#ffb95f] mb-6 uppercase tracking-widest">Company</h5>
+<ul class="space-y-4">
+<li><a class="text-[#47607e] hover:text-[#ffb95f] transition-colors" href="../../about.html">About Us</a></li>
+<li><a class="text-[#47607e] hover:text-[#ffb95f] transition-colors" href="../emtyre_training/code.html">Safety Training</a></li>
+<li><a class="text-[#47607e] hover:text-[#ffb95f] transition-colors" href="../../contact.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-[#ffb95f] mb-6 uppercase tracking-widest">Legal</h5>
+<ul class="space-y-4">
+<li><a class="text-[#47607e] hover:text-[#ffb95f] transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-[#47607e] hover:text-[#ffb95f] transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="px-12 py-6 bg-primary border-t border-outline/10 text-center opacity-40 text-xs">
+            INDUSTRIAL SCHEMATIC VER 4.0 // ALL RIGHTS RESERVED
+        </div>
+</footer>
+</body></html>

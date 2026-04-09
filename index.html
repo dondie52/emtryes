@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMTyres — Premium Tyres for Every Vehicle | Botswana</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .hero-home { min-height: 600px; }
+
+  .vehicles-strip { background: var(--surface-container-low); padding: 0; }
+  .vehicles-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    background: var(--surface-container);
+  }
+  .vehicle-card {
+    background: var(--surface-container-low);
+    padding: 48px 40px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .vehicle-card .num {
+    font-size: 0.75rem; font-weight: 800;
+    letter-spacing: 0.14em; color: var(--secondary);
+  }
+  .vehicle-card h3 {
+    font-size: 1.375rem; font-weight: 900;
+    text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.05;
+  }
+  .vehicle-card p { color: var(--on-surface-variant); font-size: var(--body-sm); }
+  .vehicle-card .accent-rule { width: 48px; margin-top: 8px; }
+
+  .services-section { background: var(--primary); color: var(--on-primary); padding: 96px 0; }
+  .services-head { margin-bottom: 56px; max-width: 680px; }
+  .services-head h2 {
+    font-size: 2.5rem; font-weight: 900; text-transform: uppercase;
+    letter-spacing: -0.02em; line-height: 1; margin-bottom: 20px;
+  }
+  .services-head p { color: rgba(249, 250, 245, 0.72); font-size: var(--body-md); }
+  .svc-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .svc-box {
+    background: var(--primary); padding: 40px 32px;
+    display: flex; flex-direction: column; min-height: 320px;
+  }
+  .svc-box .num {
+    font-size: 0.75rem; font-weight: 800; letter-spacing: 0.14em;
+    color: var(--tertiary-fixed-dim); margin-bottom: 18px;
+  }
+  .svc-box h3 {
+    font-size: 1.125rem; font-weight: 900; text-transform: uppercase;
+    margin-bottom: 14px; line-height: 1.15;
+  }
+  .svc-box p {
+    color: rgba(249, 250, 245, 0.72); font-size: var(--body-sm); margin-bottom: 20px;
+  }
+  .svc-box ul {
+    list-style: none; margin-top: auto; padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .svc-box ul li {
+    font-size: var(--body-sm); color: rgba(249, 250, 245, 0.85);
+    padding: 4px 0; position: relative; padding-left: 14px;
+  }
+  .svc-box ul li::before {
+    content: "▸"; position: absolute; left: 0; color: var(--tertiary-fixed-dim);
+  }
+  .expert-cta {
+    margin-top: 56px; background: var(--primary-container);
+    padding: 40px 48px; display: flex;
+    justify-content: space-between; align-items: center; gap: 32px;
+  }
+  .expert-cta h3 {
+    font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .expert-cta p {
+    color: rgba(249, 250, 245, 0.7); font-size: var(--body-sm); margin-top: 6px;
+  }
+
+  .about-section { background: var(--surface); padding: 96px 0; }
+  .about-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    gap: 64px; align-items: start;
+  }
+  .about-grid h2 {
+    font-size: 2.25rem; font-weight: 900; text-transform: uppercase;
+    letter-spacing: -0.02em; line-height: 1; margin-bottom: 24px; max-width: 520px;
+  }
+  .about-grid .lead {
+    font-size: 1rem; color: var(--on-surface);
+    margin-bottom: 18px; max-width: 560px;
+  }
+  .about-grid .body {
+    color: var(--on-surface-variant); font-size: var(--body-md);
+    margin-bottom: 32px; max-width: 560px;
+  }
+  .stats-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    background: var(--surface-container); margin-bottom: 36px;
+  }
+  .stat-cell { background: var(--surface); padding: 24px 18px; }
+  .stat-cell .num {
+    font-size: 2rem; font-weight: 900; color: var(--primary);
+    letter-spacing: -0.02em; line-height: 1;
+  }
+  .stat-cell .lbl {
+    font-size: var(--label-sm); font-weight: 800;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--secondary); margin-top: 6px;
+  }
+  .about-img-wrap { position: relative; }
+  .about-img-wrap img {
+    width: 100%; height: 420px; object-fit: cover;
+    filter: grayscale(0.6) contrast(1.1);
+  }
+  .about-img-wrap .tag {
+    position: absolute; bottom: 0; left: 0;
+    background: var(--tertiary-fixed-dim); color: var(--primary);
+    padding: 14px 20px; font-size: var(--label-sm);
+    font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .why-list { list-style: none; }
+  .why-list li {
+    display: flex; gap: 14px; padding: 14px 0;
+    font-size: var(--body-sm); color: var(--on-surface);
+    border-bottom: 1px solid var(--outline-variant);
+  }
+  .why-list li::before {
+    content: "◆"; color: var(--tertiary-fixed-dim);
+    flex-shrink: 0; font-size: 0.7rem; padding-top: 4px;
+  }
+  .why-list li:last-child { border-bottom: none; }
+
+  .locations-section { background: var(--surface-container-low); padding: 96px 0; }
+  .locations-head { margin-bottom: 56px; }
+  .locations-head h2 {
+    font-size: 2.25rem; font-weight: 900; text-transform: uppercase;
+    letter-spacing: -0.02em; margin-bottom: 14px;
+  }
+  .locations-head p { color: var(--on-surface-variant); max-width: 520px; }
+  .loc-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; background: var(--surface-container);
+  }
+  .loc-card { background: var(--surface); padding: 48px 40px; }
+  .loc-card .label-stamp { color: #8b5a10; margin-bottom: 14px; }
+  .loc-card h3 {
+    font-size: 1.5rem; font-weight: 900;
+    text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .loc-card .sub {
+    font-size: var(--body-sm); color: var(--secondary);
+    font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 28px;
+  }
+  .loc-detail {
+    display: flex; gap: 14px; padding: 14px 0;
+    border-top: 1px solid var(--outline-variant); font-size: var(--body-sm);
+  }
+  .loc-detail .lbl {
+    font-size: var(--label-sm); font-weight: 800;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--secondary); min-width: 80px;
+  }
+  .loc-detail .val { color: var(--on-surface); flex: 1; }
+
+  .brands-section { background: var(--primary); color: var(--on-primary); padding: 72px 0; }
+  .brands-head { text-align: center; margin-bottom: 48px; }
+  .brands-head h2 {
+    font-size: 1.75rem; font-weight: 900; text-transform: uppercase;
+    letter-spacing: -0.01em; margin-bottom: 12px;
+  }
+  .brands-head p {
+    color: rgba(249, 250, 245, 0.65); max-width: 560px;
+    margin: 0 auto; font-size: var(--body-sm);
+  }
+  .brands-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    gap: 2px; background: rgba(255, 255, 255, 0.08);
+  }
+  .brand-cell {
+    background: var(--primary); padding: 32px 20px;
+    text-align: center; font-size: 1rem; font-weight: 800;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(249, 250, 245, 0.9);
+  }
+
+  .cta-section { background: var(--surface); padding: 96px 0; text-align: center; }
+  .cta-section h2 {
+    font-size: 2.5rem; font-weight: 900; text-transform: uppercase;
+    letter-spacing: -0.02em; line-height: 1; margin-bottom: 18px;
+  }
+  .cta-section p {
+    color: var(--on-surface-variant); max-width: 520px;
+    margin: 0 auto 32px;
+  }
+  .cta-buttons { display: inline-flex; gap: 0; }
+
+  @media (max-width: 900px) {
+    .vehicles-grid, .svc-grid, .about-grid, .stats-row, .loc-grid { grid-template-columns: 1fr; }
+    .brands-grid { grid-template-columns: repeat(2, 1fr); }
+    .expert-cta { flex-direction: column; align-items: flex-start; padding: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">EMTYRES</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">HOME</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+    <li><a href="services.html">SERVICES</a></li>
+    <li><a href="locations.html">LOCATIONS</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+  </ul>
+  <a href="tel:+26772418841" class="nav-cta">CALL NOW</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero hero-home">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1586864387634-2f33030dab41?w=1600&q=80" alt="Mining haul truck">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-card fade-up">
+      <span class="eyebrow">SERVING BOTSWANA SINCE 2009</span>
+      <h1 class="display-lg" style="margin-top: 18px;">PREMIUM TYRES<br><span style="color:var(--tertiary-fixed-dim);">FOR EVERY VEHICLE.</span></h1>
+      <p>Botswana's trusted tyre specialists serving LDV, HDV, mining operations, and OTR applications with professional fitting and maintenance services across Gaborone and Jwaneng.</p>
+      <div class="hero-buttons">
+        <a href="contact.html" class="btn btn-amber">GET QUOTE NOW</a>
+        <a href="locations.html" class="btn btn-outline-light">FIND LOCATION</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VEHICLE TYPES -->
+<section class="vehicles-strip">
+  <div class="container" style="padding: 0;">
+    <div class="vehicles-grid">
+      <div class="vehicle-card">
+        <span class="num">01 // LDV</span>
+        <h3>LIGHT DUTY VEHICLES</h3>
+        <div class="accent-rule"></div>
+        <p>Cars, SUVs, and light commercial vehicles fitted with precision and balanced for Botswana roads.</p>
+      </div>
+      <div class="vehicle-card">
+        <span class="num">02 // HDV</span>
+        <h3>HEAVY DUTY VEHICLES</h3>
+        <div class="accent-rule"></div>
+        <p>Trucks, buses, and commercial fleets equipped for durability, long-haul performance, and load integrity.</p>
+      </div>
+      <div class="vehicle-card">
+        <span class="num">03 // MINING &amp; OTR</span>
+        <h3>MINING &amp; OTR EQUIPMENT</h3>
+        <div class="accent-rule"></div>
+        <p>Heavy hauling trucks and off-road mining vehicles built to withstand extreme operational terrain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="container">
+    <div class="services-head">
+      <span class="eyebrow">OUR SERVICES</span>
+      <h2 style="margin-top: 18px;">COMPREHENSIVE<br>TYRE SOLUTIONS.</h2>
+      <p>Professional service and maintenance to keep you moving safely on Botswana's roads — from everyday passenger vehicles to the most demanding mining environments.</p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc-box">
+        <span class="num">01 // LDV</span>
+        <h3>LIGHT DUTY VEHICLE TYRES</h3>
+        <p>Premium tyres for cars, SUVs, and light commercial vehicles with professional fitting and balancing.</p>
+        <ul>
+          <li>Passenger Car Tyres</li>
+          <li>SUV &amp; 4x4 Tyres</li>
+          <li>Light Commercial Tyres</li>
+          <li>Run-Flat Technology</li>
+        </ul>
+      </div>
+      <div class="svc-box">
+        <span class="num">02 // HDV</span>
+        <h3>HEAVY DUTY VEHICLE TYRES</h3>
+        <p>Specialized tyres for trucks, buses, and commercial fleets designed for durability and performance.</p>
+        <ul>
+          <li>Truck &amp; Bus Tyres</li>
+          <li>Commercial Fleet Solutions</li>
+          <li>Retreading Services</li>
+          <li>Fleet Management</li>
+        </ul>
+      </div>
+      <div class="svc-box">
+        <span class="num">03 // INDUSTRIAL</span>
+        <h3>MINING &amp; INDUSTRIAL TYRES</h3>
+        <p>Heavy-duty tyres for mining operations and industrial equipment built for extreme conditions.</p>
+        <ul>
+          <li>Mining Truck Tyres</li>
+          <li>Heavy Hauling Solutions</li>
+          <li>OTR Off-Road Tyres</li>
+          <li>Industrial Equipment</li>
+        </ul>
+      </div>
+      <div class="svc-box">
+        <span class="num">04 // OTR</span>
+        <h3>OTR OFF-THE-ROAD TYRES</h3>
+        <p>Specialized OTR tyres for mining, earthmoving equipment, and extreme off-road applications.</p>
+        <ul>
+          <li>Mining Dump Trucks</li>
+          <li>Earthmoving Equipment</li>
+          <li>Loader &amp; Excavator Tyres</li>
+          <li>Extreme Terrain Solutions</li>
+        </ul>
+      </div>
+      <div class="svc-box">
+        <span class="num">05 // FITTING</span>
+        <h3>PROFESSIONAL FITTING</h3>
+        <p>Expert tyre fitting and installation services with state-of-the-art equipment and certified technicians.</p>
+        <ul>
+          <li>Wheel Balancing</li>
+          <li>Alignment Services</li>
+          <li>Tyre Mounting</li>
+          <li>Pressure Monitoring</li>
+        </ul>
+      </div>
+      <div class="svc-box">
+        <span class="num">06 // EMERGENCY</span>
+        <h3>24/7 EMERGENCY SERVICE</h3>
+        <p>Round-the-clock emergency tyre services for breakdowns and urgent replacements across Botswana.</p>
+        <ul>
+          <li>Emergency Callouts</li>
+          <li>Roadside Assistance</li>
+          <li>Mobile Fitting</li>
+          <li>Fleet Support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="expert-cta">
+      <div>
+        <h3>NEED EXPERT ADVICE?</h3>
+        <p>Our certified technicians are ready to help you choose the right tyres for your vehicle and needs.</p>
+      </div>
+      <a href="contact.html" class="btn btn-amber">SPEAK TO AN EXPERT</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="label-stamp" style="color: var(--secondary);">EST. 2009 // BOTSWANA</span>
+        <h2 style="margin-top: 14px;">BOTSWANA'S PREMIER TYRE SPECIALISTS.</h2>
+        <p class="lead">EMTyres has been serving Botswana's automotive and mining industries for over 15 years, providing premium tyre solutions and professional services across Gaborone and Jwaneng.</p>
+        <p class="body">We specialize in supplying and fitting tyres for light duty vehicles (LDV) and heavy duty vehicles (HDV), with particular expertise in mining and heavy hauling operations. Our comprehensive range includes OTR tyres for mining equipment and extreme terrain applications.</p>
+
+        <div class="stats-row">
+          <div class="stat-cell"><div class="num">15+</div><div class="lbl">YEARS EXPERIENCE</div></div>
+          <div class="stat-cell"><div class="num">10K+</div><div class="lbl">TYRES FITTED</div></div>
+          <div class="stat-cell"><div class="num">500+</div><div class="lbl">FLEET CLIENTS</div></div>
+          <div class="stat-cell"><div class="num">2</div><div class="lbl">SERVICE CENTERS</div></div>
+        </div>
+
+        <a href="about.html" class="btn btn-dark">LEARN MORE ABOUT US</a>
+      </div>
+      <div>
+        <div class="about-img-wrap">
+          <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=900&q=80" alt="EMTyres service center">
+          <span class="tag">EMTYRES SERVICE CENTER</span>
+        </div>
+        <h3 style="font-size:1rem; font-weight:800; text-transform:uppercase; letter-spacing:0.02em; margin: 32px 0 14px;">WHY CHOOSE EMTYRES?</h3>
+        <ul class="why-list">
+          <li>Certified technicians and professional service</li>
+          <li>Premium brand partnerships and quality assurance</li>
+          <li>Specialized mining, heavy vehicle, and OTR expertise</li>
+          <li>Comprehensive safety and maintenance programs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS PREVIEW -->
+<section class="locations-section">
+  <div class="container">
+    <div class="locations-head">
+      <span class="label-stamp" style="color: var(--secondary);">OUR LOCATIONS</span>
+      <h2 style="margin-top: 14px;">TWO BRANCHES.<br>ONE STANDARD.</h2>
+      <p>Conveniently located to serve you across Botswana — from the capital's commercial corridors to the Jwaneng mining zone.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <span class="label-stamp">01 // MAIN SERVICE CENTER</span>
+        <h3>GABORONE BRANCH</h3>
+        <div class="sub">Main Service Center</div>
+        <div class="loc-detail"><div class="lbl">ADDRESS</div><div class="val">Industrial Area, Gaborone</div></div>
+        <div class="loc-detail"><div class="lbl">PHONE</div><div class="val">+267 72 418 841</div></div>
+        <div class="loc-detail"><div class="lbl">HOURS</div><div class="val">Mon–Fri: 7:30AM–5:30PM<br>Sat: 8:00AM–1:00PM</div></div>
+      </div>
+      <div class="loc-card">
+        <span class="label-stamp">02 // MINING SUPPORT CENTER</span>
+        <h3>JWANENG BRANCH</h3>
+        <div class="sub">Mining Support Center</div>
+        <div class="loc-detail"><div class="lbl">ADDRESS</div><div class="val">Mining Town, Jwaneng</div></div>
+        <div class="loc-detail"><div class="lbl">PHONE</div><div class="val">+267 72 418 841</div></div>
+        <div class="loc-detail"><div class="lbl">HOURS</div><div class="val">Mon–Fri: 7:00AM–6:00PM<br>Sat: 8:00AM–12:00PM</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands-section">
+  <div class="container">
+    <div class="brands-head">
+      <h2>PREMIUM BRAND PARTNERS</h2>
+      <p>We work with the world's leading tyre manufacturers to bring you quality and reliability.</p>
+    </div>
+    <div class="brands-grid">
+      <div class="brand-cell">MICHELIN</div>
+      <div class="brand-cell">BRIDGESTONE</div>
+      <div class="brand-cell">CONTINENTAL</div>
+      <div class="brand-cell">GOODYEAR</div>
+      <div class="brand-cell">PIRELLI</div>
+      <div class="brand-cell">DUNLOP</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>READY TO JOIN OUR<br>SUCCESS STORIES?</h2>
+    <p>Let us provide reliable tyre solutions for your fleet or vehicle. Get started with a free consultation and tyre assessment.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-amber">GET FREE QUOTE</a>
+      <a href="#" class="btn btn-dark">DOWNLOAD CATALOG</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h4>EMTYRES</h4>
+      <p>Botswana's premier tyre specialists serving the automotive and mining industries with quality products and professional services for over 15 years.</p>
+      <p class="footer-alt-link"><a href="stitch_emtyre_industrial_website/emtyre_home/code.html">Industrial layout preview (EMTyre)</a></p>
+    </div>
+    <div class="footer-col">
+      <h5>SERVICES</h5>
+      <ul>
+        <li><a href="services.html">LDV Tyres</a></li>
+        <li><a href="services.html">HDV Tyres</a></li>
+        <li><a href="services.html">Mining &amp; OTR</a></li>
+        <li><a href="services.html">Professional Fitting</a></li>
+        <li><a href="services.html">24/7 Emergency</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>LOCATIONS</h5>
+      <ul>
+        <li><a href="locations.html">Gaborone Branch</a></li>
+        <li><a href="locations.html">Jwaneng Branch</a></li>
+        <li><a href="tel:+26772418841">+267 72 418 841</a></li>
+        <li><a href="mailto:info@emtyres.co.bw">info@emtyres.co.bw</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>STAY UPDATED</h5>
+      <div class="newsletter-input">
+        <input type="email" placeholder="Enter your email">
+        <button>›</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2024 EMTYRES. SERVING BOTSWANA'S AUTOMOTIVE AND MINING INDUSTRIES SINCE 2009</div>
+</footer>
+
+</body>
+</html>
