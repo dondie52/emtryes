@@ -3,359 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMTyres — Locations | Gaborone &amp; Jwaneng</title>
+<meta name="description" content="EM Tyre Specialists is based in Jwaneng, Botswana — find us, call us, send us a brief.">
+<title>Location — EM Tyre Specialists</title>
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <link rel="stylesheet" href="styles.css">
-<style>
-  .loc-hero {
-    background: var(--primary); color: var(--on-primary);
-    padding: 100px 0 120px;
-  }
-  .loc-hero h1 {
-    font-size: 3.5rem; font-weight: 900;
-    text-transform: uppercase; line-height: 0.95;
-    letter-spacing: -0.02em; margin-top: 22px; max-width: 760px;
-  }
-  .loc-hero p {
-    color: rgba(249, 250, 245, 0.78);
-    max-width: 560px; margin-top: 22px;
-  }
-
-  .branches-section { background: var(--surface); padding: 0; }
-  .branch {
-    display: grid; grid-template-columns: 1.2fr 1fr;
-    gap: 2px; background: var(--surface-container);
-  }
-  .branch.reverse .b-img { order: 1; }
-  .branch.reverse .b-info { order: 2; }
-  .b-info {
-    background: var(--surface);
-    padding: 80px 64px;
-    display: flex; flex-direction: column; justify-content: center;
-  }
-  .b-info .label-stamp {
-    color: var(--secondary); margin-bottom: 18px;
-  }
-  .b-info h2 {
-    font-size: 2.25rem; font-weight: 900;
-    text-transform: uppercase; letter-spacing: -0.02em;
-    line-height: 1; margin-bottom: 6px;
-  }
-  .b-info .sub {
-    font-size: var(--body-sm); color: var(--tertiary-container);
-    color: #8b5a10; font-weight: 800; letter-spacing: 0.12em;
-    text-transform: uppercase; margin-bottom: 32px;
-  }
-  .detail-row {
-    display: grid; grid-template-columns: 120px 1fr;
-    gap: 18px; padding: 18px 0;
-    border-top: 1px solid var(--outline-variant);
-    font-size: var(--body-md);
-  }
-  .detail-row:last-of-type { border-bottom: 1px solid var(--outline-variant); }
-  .detail-row .lbl {
-    font-size: var(--label-sm); font-weight: 800;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--secondary);
-  }
-  .detail-row .val { color: var(--on-surface); }
-  .detail-row .val a {
-    color: var(--primary); text-decoration: none;
-    font-weight: 800; border-bottom: 2px solid var(--tertiary-fixed-dim);
-  }
-  .b-info .btns { margin-top: 32px; display: flex; gap: 16px; }
-
-  .b-img {
-    position: relative;
-    min-height: 520px;
-    overflow: hidden;
-  }
-  .b-img img {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; filter: grayscale(0.5) contrast(1.1);
-  }
-  .b-img .badge {
-    position: absolute; top: 24px; left: 24px;
-    background: var(--tertiary-fixed-dim); color: var(--primary);
-    padding: 10px 16px; font-size: var(--label-sm);
-    font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
-  }
-
-  .gallery-section { background: var(--surface-container-low); padding: 96px 0; }
-  .gallery-head { margin-bottom: 56px; max-width: 680px; }
-  .gallery-head h2 {
-    font-size: 2.25rem; font-weight: 900;
-    text-transform: uppercase; letter-spacing: -0.02em;
-    line-height: 1; margin-bottom: 14px;
-  }
-  .gallery-head p { color: var(--on-surface-variant); }
-
-  .gallery-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 2px; background: var(--surface-container);
-  }
-  .gal-item {
-    background: var(--surface);
-    position: relative; overflow: hidden;
-  }
-  .gal-item img {
-    width: 100%; height: 260px; object-fit: cover;
-    filter: grayscale(0.5) contrast(1.1);
-    transition: transform 0.4s;
-  }
-  .gal-item:hover img { transform: scale(1.05); }
-  .gal-item .cap {
-    padding: 18px 20px;
-  }
-  .gal-item .cap h4 {
-    font-size: 0.875rem; font-weight: 800;
-    text-transform: uppercase; letter-spacing: 0.01em;
-    margin-bottom: 4px;
-  }
-  .gal-item .cap span {
-    font-size: var(--label-sm); font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--secondary);
-  }
-
-  .emergency-band {
-    background: var(--tertiary-container);
-    color: var(--on-primary); padding: 56px 0;
-  }
-  .emergency-grid {
-    display: flex; justify-content: space-between;
-    align-items: center; gap: 32px;
-  }
-  .emergency-grid .left { flex: 1; }
-  .emergency-grid .lbl {
-    font-size: var(--label-sm); font-weight: 800;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--tertiary-fixed-dim); margin-bottom: 10px;
-  }
-  .emergency-grid h2 {
-    font-size: 2rem; font-weight: 900;
-    text-transform: uppercase; letter-spacing: -0.02em;
-    line-height: 1;
-  }
-  .emergency-grid .phone {
-    font-size: 2rem; font-weight: 900;
-    color: var(--tertiary-fixed-dim);
-    letter-spacing: -0.01em;
-  }
-
-  @media (max-width: 900px) {
-    .branch, .branch.reverse { grid-template-columns: 1fr; }
-    .branch.reverse .b-img { order: 2; }
-    .branch.reverse .b-info { order: 1; }
-    .b-info { padding: 48px 28px; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
-    .loc-hero h1 { font-size: 2.25rem; }
-    .emergency-grid { flex-direction: column; align-items: flex-start; }
-  }
-</style>
 </head>
 <body>
 
-<nav class="nav">
-  <a href="index.html" class="nav-logo">EMTYRES</a>
-  <ul class="nav-links">
-    <li><a href="index.html">HOME</a></li>
-    <li><a href="about.html">ABOUT</a></li>
-    <li><a href="services.html">SERVICES</a></li>
-    <li><a href="locations.html" class="active">LOCATIONS</a></li>
-    <li><a href="contact.html">CONTACT</a></li>
-  </ul>
-  <a href="tel:+26772418841" class="nav-cta">CALL NOW</a>
-</nav>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="EM Tyre Specialists — Home">
+      <svg class="brand-mark" viewBox="0 0 72 72" aria-hidden="true">
+        <circle cx="36" cy="36" r="30" fill="none" stroke="currentColor" stroke-width="4"/>
+        <circle cx="36" cy="36" r="13" fill="none" stroke="currentColor" stroke-width="3"/>
+        <g stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none">
+          <line x1="36" y1="2"  x2="36" y2="12"/>
+          <line x1="36" y1="60" x2="36" y2="70"/>
+          <line x1="2"  y1="36" x2="12" y2="36"/>
+          <line x1="60" y1="36" x2="70" y2="36"/>
+          <line x1="11" y1="11" x2="18" y2="18"/>
+          <line x1="54" y1="54" x2="61" y2="61"/>
+          <line x1="11" y1="61" x2="18" y2="54"/>
+          <line x1="54" y1="18" x2="61" y2="11"/>
+        </g>
+      </svg>
+      <span class="brand-text">
+        <span class="row1"><span class="em">EM</span>TYRE</span>
+        <span class="row2">SPECIALISTS</span>
+      </span>
+    </a>
 
-<!-- HERO -->
-<section class="loc-hero">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="locations.html" class="active">Location</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-cta-wrap">
+      <a href="tel:+26773580556" class="btn btn-amber">Call (+267) 73 580 556</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="locations.html" class="active">Location</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-cta">
+      <a href="tel:+26773580556" class="btn btn-amber">Call us</a>
+      <a href="contact.html" class="btn btn-outline">Get a quote</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
   <div class="container">
-    <span class="eyebrow">OUR LOCATIONS</span>
-    <h1>TWO BRANCHES.<br>ONE STANDARD.</h1>
-    <p>Conveniently located to serve you across Botswana — from the capital's commercial corridors to the Jwaneng mining zone.</p>
+    <span class="eyebrow on-dark">Where to find us</span>
+    <h1>Based in Jwaneng. Working across Botswana.</h1>
+    <p>Our workshop is in Jwaneng &mdash; the right place to be when service trucks need repairs, rims
+    or chocks fast. Call ahead and we&rsquo;ll book the bay.</p>
   </div>
 </section>
 
-<!-- BRANCHES -->
-<section class="branches-section">
-
-  <!-- Gaborone -->
-  <div class="branch">
-    <div class="b-info">
-      <span class="label-stamp">01 // MAIN SERVICE CENTER</span>
-      <h2>GABORONE BRANCH</h2>
-      <div class="sub">Main Service Center</div>
-
-      <div class="detail-row">
-        <div class="lbl">ADDRESS</div>
-        <div class="val">Industrial Area, Gaborone<br>Botswana</div>
-      </div>
-      <div class="detail-row">
-        <div class="lbl">PHONE</div>
-        <div class="val"><a href="tel:+26772418841">+267 72 418 841</a></div>
-      </div>
-      <div class="detail-row">
-        <div class="lbl">EMAIL</div>
-        <div class="val"><a href="mailto:info@emtyres.co.bw">info@emtyres.co.bw</a></div>
-      </div>
-      <div class="detail-row">
-        <div class="lbl">HOURS</div>
-        <div class="val">Mon–Fri: 7:30 AM – 5:30 PM<br>Saturday: 8:00 AM – 1:00 PM<br>Sunday: Closed</div>
-      </div>
-      <div class="detail-row">
-        <div class="lbl">SPECIALTY</div>
-        <div class="val">LDV &amp; HDV fitting, balancing, alignment, commercial fleet support</div>
-      </div>
-
-      <div class="btns">
-        <a href="contact.html" class="btn btn-dark">BOOK APPOINTMENT</a>
-        <a href="tel:+26772418841" class="btn btn-amber">CALL BRANCH</a>
-      </div>
-    </div>
-    <div class="b-img">
-      <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=1000&q=80" alt="Gaborone branch">
-      <span class="badge">GABORONE HQ</span>
-    </div>
-  </div>
-
-  <!-- Jwaneng -->
-  <div class="branch reverse">
-    <div class="b-info">
-      <span class="label-stamp">02 // MINING SUPPORT CENTER</span>
-      <h2>JWANENG BRANCH</h2>
-      <div class="sub">Mining Support Center</div>
-
-      <div class="detail-row">
-        <div class="lbl">ADDRESS</div>
-        <div class="val">Mining Town, Jwaneng<br>Botswana</div>
-      </div>
-      <div class="detail-row">
-        <div class="lbl">PHONE</div>
-        <div class="val"><a href="tel:+26772418841">+267 72 418 841</a></div>
-      </div>
-      <div class="detail-row">
-        <div class="lbl">EMAIL</div>
-        <div class="val"><a href="mailto:sales@emtyres.co.bw">sales@emtyres.co.bw</a></div>
-      </div>
-      <div class="detail-row">
-        <div class="lbl">HOURS</div>
-        <div class="val">Mon–Fri: 7:00 AM – 6:00 PM<br>Saturday: 8:00 AM – 12:00 PM<br>Sunday: Emergency callouts only</div>
-      </div>
-      <div class="detail-row">
-        <div class="lbl">SPECIALTY</div>
-        <div class="val">OTR mining tyres, heavy hauling support, 24/7 on-site emergency response</div>
-      </div>
-
-      <div class="btns">
-        <a href="contact.html" class="btn btn-dark">REQUEST SITE VISIT</a>
-        <a href="tel:+26772418841" class="btn btn-amber">CALL BRANCH</a>
-      </div>
-    </div>
-    <div class="b-img">
-      <img src="https://images.unsplash.com/photo-1586864387789-628af9feed72?w=1000&q=80" alt="Jwaneng branch">
-      <span class="badge">MINING SUPPORT</span>
-    </div>
-  </div>
-</section>
-
-<!-- EMERGENCY BAND -->
-<section class="emergency-band">
+<section class="section">
   <div class="container">
-    <div class="emergency-grid">
-      <div class="left">
-        <div class="lbl">CRITICAL OPS // 24/7</div>
-        <h2>EMERGENCY CALLOUTS ACROSS BOTSWANA</h2>
-      </div>
+    <div class="contact-grid">
+
+      <aside class="info-card">
+        <div>
+          <span class="eyebrow on-dark">EM Tyre Specialists</span>
+          <h2 style="margin-top:10px;">Jwaneng workshop.</h2>
+        </div>
+
+        <div class="info-row">
+          <span class="glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-7 8-13a8 8 0 10-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+          </span>
+          <div>
+            <div class="lbl">Address</div>
+            <div class="val">Box 1737<br>Jwaneng, Botswana</div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+          </span>
+          <div>
+            <div class="lbl">Phone</div>
+            <div class="val big"><a href="tel:+26773580556">(+267) 73 580 556</a></div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </span>
+          <div>
+            <div class="lbl">Email</div>
+            <div class="val"><a href="mailto:info@emtyres.com">info@emtyres.com</a></div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </span>
+          <div>
+            <div class="lbl">Hours</div>
+            <div class="val">Mon &ndash; Fri: 07:30 &ndash; 17:00<br>Sat: 08:00 &ndash; 13:00<br>Sun: closed</div>
+          </div>
+        </div>
+
+        <div style="margin-top:6px;">
+          <a href="contact.html" class="btn btn-amber btn-block">Send a brief</a>
+        </div>
+      </aside>
+
       <div>
-        <div class="lbl" style="text-align:right;">DIRECT LINE</div>
-        <div class="phone">+267 72 418 841</div>
+        <div class="card" style="padding:0; overflow:hidden;">
+          <div style="aspect-ratio: 16/10; background:
+                radial-gradient(800px 400px at 30% 20%, rgba(58,111,181,0.18), transparent 60%),
+                linear-gradient(180deg, var(--surface-3) 0%, var(--surface-2) 100%);
+                position:relative; display:flex; align-items:center; justify-content:center;">
+            <svg viewBox="0 0 220 140" width="80%" fill="none" stroke="var(--blue-500)" stroke-width="2">
+              <!-- Stylised map -->
+              <path d="M10 40 L60 30 L110 50 L160 35 L210 60 L210 110 L160 130 L100 120 L50 130 L10 110 Z" fill="var(--blue-50)" stroke-opacity="0.6"/>
+              <path d="M40 70 L90 65 L140 80 L180 75" stroke-dasharray="4 6" stroke-opacity="0.6"/>
+              <!-- Pin -->
+              <g transform="translate(110 75)">
+                <circle r="22" fill="var(--blue-500)" fill-opacity="0.12" stroke="none"/>
+                <circle r="12" fill="var(--blue-500)" fill-opacity="0.22" stroke="none"/>
+                <path d="M0 -14 C 8 -14 12 -8 12 -2 C 12 6 0 18 0 18 C 0 18 -12 6 -12 -2 C -12 -8 -8 -14 0 -14 Z" fill="var(--navy-900)" stroke="none"/>
+                <circle cy="-2" r="3.5" fill="var(--blue-400)" stroke="none"/>
+              </g>
+              <text x="110" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="var(--navy-700)" font-weight="700" letter-spacing="0.2em">JWANENG &middot; BOTSWANA</text>
+            </svg>
+          </div>
+          <div style="padding:24px 28px;">
+            <span class="eyebrow">On the map</span>
+            <h3 style="margin-top:10px;">Jwaneng, Southern District</h3>
+            <p class="muted" style="margin-top:6px;">Strategically placed for service-truck operators across the southern mining and transport corridor.</p>
+            <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+              <a href="https://www.google.com/maps/search/?api=1&query=Jwaneng+Botswana" target="_blank" rel="noopener" class="btn btn-outline">Open in Maps</a>
+              <a href="tel:+26773580556" class="btn btn-primary">Call workshop</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- WORK GALLERY -->
-<section class="gallery-section">
-  <div class="container">
-    <div class="gallery-head">
-      <span class="label-stamp" style="color: var(--secondary);">OUR WORK GALLERY</span>
-      <h2 style="margin-top: 14px;">ON-SITE.<br>IN-ACTION.</h2>
-      <p>Take a look at our professional tyre services, modern facilities, and satisfied customers. See why EMTyres is Botswana's trusted tyre specialist.</p>
-    </div>
-
-    <div class="gallery-grid">
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1586864387634-2f33030dab41?w=600&q=80" alt="Mining">
-        <div class="cap"><h4>Mining Tyre Installation</h4><span>MINING SERVICES</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?w=600&q=80" alt="Balancing">
-        <div class="cap"><h4>Precision Wheel Balancing</h4><span>PROFESSIONAL SERVICES</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80" alt="Fleet">
-        <div class="cap"><h4>Fleet Tyre Services</h4><span>COMMERCIAL FLEET</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&q=80" alt="Emergency">
-        <div class="cap"><h4>Emergency Roadside Service</h4><span>EMERGENCY SERVICES</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1635770311153-2839f94e89e0?w=600&q=80" alt="Inspection">
-        <div class="cap"><h4>Safety Inspections</h4><span>SAFETY SERVICES</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=600&q=80" alt="Inventory">
-        <div class="cap"><h4>Premium Tyre Inventory</h4><span>TYRE SELECTION</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1586449480558-33aa8cd1e054?w=600&q=80" alt="OTR">
-        <div class="cap"><h4>OTR Tyre Installation</h4><span>OTR SERVICES</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80" alt="Alignment">
-        <div class="cap"><h4>Wheel Alignment Services</h4><span>PROFESSIONAL SERVICES</span></div>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <h4>EMTYRES</h4>
-      <p>Botswana's premier tyre specialists serving the automotive and mining industries with quality products and professional services for over 15 years.</p>
-    </div>
-    <div class="footer-col">
-      <h5>SERVICES</h5>
-      <ul>
-        <li><a href="services.html">LDV Tyres</a></li>
-        <li><a href="services.html">HDV Tyres</a></li>
-        <li><a href="services.html">Mining &amp; OTR</a></li>
-        <li><a href="services.html">Professional Fitting</a></li>
-        <li><a href="services.html">24/7 Emergency</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>LOCATIONS</h5>
-      <ul>
-        <li><a href="locations.html">Gaborone Branch</a></li>
-        <li><a href="locations.html">Jwaneng Branch</a></li>
-        <li><a href="tel:+26772418841">+267 72 418 841</a></li>
-        <li><a href="mailto:info@emtyres.co.bw">info@emtyres.co.bw</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>STAY UPDATED</h5>
-      <div class="newsletter-input">
-        <input type="email" placeholder="Enter your email">
-        <button>›</button>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <svg class="brand-mark" viewBox="0 0 72 72" aria-hidden="true">
+            <circle cx="36" cy="36" r="30" fill="none" stroke="currentColor" stroke-width="4"/>
+            <circle cx="36" cy="36" r="13" fill="none" stroke="currentColor" stroke-width="3"/>
+            <g stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none">
+              <line x1="36" y1="2"  x2="36" y2="12"/>
+              <line x1="36" y1="60" x2="36" y2="70"/>
+              <line x1="2"  y1="36" x2="12" y2="36"/>
+              <line x1="60" y1="36" x2="70" y2="36"/>
+              <line x1="11" y1="11" x2="18" y2="18"/>
+              <line x1="54" y1="54" x2="61" y2="61"/>
+              <line x1="11" y1="61" x2="18" y2="54"/>
+              <line x1="54" y1="18" x2="61" y2="11"/>
+            </g>
+          </svg>
+          <span class="brand-text">
+            <span class="row1"><span class="em">EM</span>TYRE</span>
+            <span class="row2">SPECIALISTS</span>
+          </span>
+        </a>
+        <p>Specialist OTR tyre repairs, wheels, rims and accessories for service trucks and mining fleets across Botswana.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#otr-repairs">OTR Tyre Repairs</a></li>
+          <li><a href="services.html#wheels-rims">OTR Wheels &amp; Rims</a></li>
+          <li><a href="services.html#accessories">Tyre Accessories</a></li>
+          <li><a href="services.html#chocks">OTR Tyres &amp; LVD Chocks</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="locations.html">Location</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="tel:+26773580556">(+267) 73 580 556</a></li>
+          <li><a href="mailto:info@emtyres.com">info@emtyres.com</a></li>
+          <li>Box 1737, Jwaneng, Botswana</li>
+        </ul>
       </div>
     </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="yr"></span> EM Tyre Specialists. All rights reserved.</span>
+      <span>Management &amp; Repairs</span>
+    </div>
   </div>
-  <div class="footer-bottom">&copy; 2024 EMTYRES. SERVING BOTSWANA'S AUTOMOTIVE AND MINING INDUSTRIES SINCE 2009</div>
 </footer>
+
+<script>
+  (function () {
+    const btn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
